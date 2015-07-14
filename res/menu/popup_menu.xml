@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+     <item  
+        android:id="@+id/Face"  
+        android:title="FACE"/>
+    
+    <item  
+        android:id="@+id/VOTERSID"  
+        android:title="-VOTERSID-"/>  
+
+    <item  
+        android:id="@+id/PASSPORT"  
+        android:title="-PASSPORT-"/>  
+        
+
+        
+     <item  
+        android:id="@+id/DETECT"  
+        android:title="-DETECT-"/>
+
+</menu>
