@@ -1,7 +1,7 @@
 #Pixtern Sample App#
 
 
-This is a sample app for the image validation library Pixtern. For further information on how to use the Pitern Library: [click here](https://bitbucket.org/F4b1/pixtern-library/overview)
+This is a sample app for the image validation library Pixtern. For further information on how to use the Pixtern Library: [click here](https://bitbucket.org/F4b1/pixtern-library/overview)
 
 
 Sample App
