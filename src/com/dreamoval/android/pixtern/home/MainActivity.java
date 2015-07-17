@@ -3,6 +3,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
+import org.json.JSONObject;
+
 import com.dreamoval.android.pixtern.card.utils.DataHolder;
 
 import android.support.v7.app.ActionBar;
@@ -120,6 +122,9 @@ public class MainActivity extends Activity implements OnClickListener {
 				tellus(data.getStringExtra("theSelfie"));
 				tellus(data.getSerializableExtra("theValidation").toString());
 				theUpload = (HashMap) data.getSerializableExtra("theValidation");
+				
+				//Turn into JSON Object
+//				object = new JSONObject(theUpload);
 
 				if(theUpload.containsKey("Card") && theUpload.get("Card").equals("-VOTERSID-")) {
 					Iterator entries = theUpload.entrySet().iterator();
