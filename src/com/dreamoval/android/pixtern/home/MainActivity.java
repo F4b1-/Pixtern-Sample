@@ -126,6 +126,8 @@ public class MainActivity extends Activity implements OnClickListener {
 				//Turn into JSON Object
 //				object = new JSONObject(theUpload);
 
+				//Use regular expressions to improve the results 
+				//VOTERSID
 				if(theUpload.containsKey("Card") && theUpload.get("Card").equals("-VOTERSID-")) {
 					Iterator entries = theUpload.entrySet().iterator();
 					while (entries.hasNext()) {
@@ -134,9 +136,8 @@ public class MainActivity extends Activity implements OnClickListener {
 						String value =(String) thisEntry.getValue();
 						if(key.equals("Age")) thisEntry.setValue(value.replaceAll("[^0-9]", ""));
 						if(key.equals("Gender")) {
-							if(value.contains("Female")) value = "Female";
-							else value = "Male";
-							thisEntry.setValue(value);
+							if(value.contains("Fe")) value = "Female";
+							else if(value.contains("Male")) value = "Male";
 						}
 						if(key.equals("Regdate")) thisEntry.setValue(value.replaceAll("[^0-9\\/]", ""));
 						if(key.equals("Name")) {
@@ -146,7 +147,7 @@ public class MainActivity extends Activity implements OnClickListener {
 						if(key.equals("ID")) thisEntry.setValue(value.replaceAll("[^0-9]", ""));
 					}
 				}
-
+				//PASSPORT
 				if(theUpload.containsKey("Card") && theUpload.get("Card").equals("-PASSPORT-")) {
 					Iterator entries = theUpload.entrySet().iterator();
 					while (entries.hasNext()) {
@@ -165,7 +166,7 @@ public class MainActivity extends Activity implements OnClickListener {
 						}
 					}
 				}
-				
+				//PERSONALAUSWEIS
 				if(theUpload.containsKey("Card") && theUpload.get("Card").equals("-PERSONALAUSWEIS-")) {
 					Iterator entries = theUpload.entrySet().iterator();
 					while (entries.hasNext()) {
@@ -194,7 +195,9 @@ public class MainActivity extends Activity implements OnClickListener {
 						textView.setText(theUpload.toString());
 					}
 				});
-			} else if(requestCode == 999) {
+			} 
+			//If returning from Realtime
+			else if(requestCode == 999) {
 				theSelfie = data.getStringExtra("theSelfie").toString();
 				tellus(data.getStringExtra("theSelfie").toString());
 
